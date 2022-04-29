@@ -4,7 +4,7 @@ const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 静态资源输出
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 const rules = require('./webpack.rules.config');
 
 /**
@@ -68,7 +68,12 @@ module.exports = {
   optimization: {
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
-    minimizer: [new UglifyJsPlugin()],
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        parallel: true,
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         // 抽离第三方插件
@@ -101,5 +106,10 @@ module.exports = {
       '/@': path.resolve(__dirname, '../src/'),
     },
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  cache: {
+    type: 'filesystem',
+    compression: 'gzip',
+    allowCollectingMemory: true,
   },
 };
