@@ -1,10 +1,8 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./index.config');
 
-const webpackConfigDev = {
-  // 声明开发环境
-  mode: 'development',
+const webpackConfigRuntime = {
   output: {
     filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
@@ -20,4 +18,6 @@ const webpackConfigDev = {
   },
 };
 
-module.exports = webpackMerge.merge(webpackConfig, webpackConfigDev);
+module.exports = (env, argv) => {
+  return webpackMerge.merge(webpackConfig(env, argv), webpackConfigRuntime);
+};

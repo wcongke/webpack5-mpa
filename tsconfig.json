@@ -1,13 +1,29 @@
 {
   "compilerOptions": {
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "rootDir": ".",
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "jsx": "react",
+    "moduleResolution": "node",
+    "jsx": "preserve",
     "allowJs": true,
-    "moduleResolution": "node"
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "/@/*": ["./src/*"]
+    }
   },
-  "exclude": ["./build"]
+  "exclude": ["./webpack"],
+  "include": ["./src", "./types"],
+  "compileOnSave": false
 }
