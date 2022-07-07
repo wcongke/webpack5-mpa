@@ -2,6 +2,10 @@
 
 > webpack5 多页面应用
 
+- [tailwindcss](https://tailwindcss.com/)
+- [lodash](https://lodash.com/)
+- [f2elint](https://www.npmjs.com/package/f2elint)
+
 ## 启动应用
 
 ```bash
@@ -37,8 +41,10 @@ pnpm run serve
 - 将代理 `dist/` 文件夹下的文件
 - 可通过 `-p` 指定启动端口
 
-## 环境变量
+## 模式和环境变量
 
-- 默认支持 dev/test/prod 环境
-- 可在.env.(development/test/production) 自定义环境变量
-- 可自定义环境如(local/preview)
+- 默认支持 dev/test/prod 模式
+- 可在 `.env.(development/test/production)` 文件中自定义环境变量
+- 可自定义开发模式如(local/preview)
+  - 1. 新增 `npm script`
+  - 2. 新增 `.env.xxx` 文件
