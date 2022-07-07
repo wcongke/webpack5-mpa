@@ -7,7 +7,7 @@ const webpackConfigBuild = {
   output: {
     filename: 'js/[name].[fullhash].js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    publicPath: './',
     clean: true,
   },
   plugins: [
