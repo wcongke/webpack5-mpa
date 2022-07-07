@@ -41,5 +41,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
-  "cSpell.words": ["elint", "purifycss", "Uglifyjs"]
+  "cSpell.words": ["degit", "elint", "pnpm", "purifycss", "Uglifyjs"]
 }

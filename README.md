@@ -6,6 +6,14 @@
 - [lodash](https://lodash.com/)
 - [f2elint](https://www.npmjs.com/package/f2elint)
 
+## 复制本仓库
+
+- [degit](https://www.npmjs.com/package/degit)
+
+```bash
+degit git@github.com:wcongke/webpack5-mpa.git your-project-name
+```
+
 ## 启动应用
 
 ```bash
@@ -46,5 +54,5 @@ pnpm run serve
 - 默认支持 dev/test/prod 模式
 - 可在 `.env.(development/test/production)` 文件中自定义环境变量
 - 可自定义开发模式如(local/preview)
-  - 1. 新增 `npm script`
-  - 2. 新增 `.env.xxx` 文件
+  - 新增 `npm script`
+  - 新增 `.env.xxx` 文件
